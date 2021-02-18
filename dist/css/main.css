@@ -1,0 +1,309 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 0. Breakpoints ==================================== */
+/* 1. Colors ========================================= */
+/* 2. Fonts  ========================================= */
+/* 0. Breakpoints ==================================== */
+/* 1. Colors ========================================= */
+/* 2. Fonts  ========================================= */
+/* 1. Main Layout ================================= */
+body {
+	background: #F7ECF8;
+}
+
+/* 2. Content ================================= */
+body {
+	display: grid;
+	font-size: 1.3rem;
+}
+
+body h2 {
+	font-weight: 600;
+	font-size: 2rem;
+	margin: 20px 0px;
+}
+
+body h3 {
+	font-size: 1rem;
+	margin: 4.2px 0px;
+}
+
+body p {
+	color: #A0A0A0;
+}
+
+body .userContainer {
+	margin: 20px auto;
+}
+
+body .userContainer .user {
+	display: flex;
+	align-items: center;
+	width: 50%;
+}
+
+body .userContainer .user .imgContainer {
+	border: 6.66px #d9d9d954 solid;
+	border-radius: 100%;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin-right: 4.2%;
+}
+
+body .userContainer .user .imgContainer img {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+}
+
+body article {
+	padding: 40px;
+}
+
+body .odd {
+	display: flex;
+	flex-direction: column-reverse;
+	background-color: #fff;
+}
+
+body .odd .userContainer {
+	margin-left: auto;
+}
+
+body .odd .userContainer .user {
+	width: 105%;
+}
+
+body .even {
+	color: #F7ECF8;
+}
+
+body .test2 {
+	background: #19202D;
+}
+
+body .test4 {
+	background: #CB1E7B;
+}
+
+body .test5 .userContainer {
+	margin-left: 0%;
+}
+
+@media screen and (min-width: 760px) {
+	body {
+		padding: 20px;
+		grid-gap: 20px;
+		grid-template: "test1 test2" 1fr "test4 test2" 1fr "test4 test3" 1fr "test5 test5" 1fr / 1fr 1fr;
+	}
+	body article {
+		border-radius: 10px;
+	}
+	body .test1 {
+		grid-area: test1;
+	}
+	body .test2 {
+		grid-area: test2;
+	}
+	body .test3 {
+		grid-area: test3;
+	}
+	body .test4 {
+		grid-area: test4;
+	}
+	body .test5 {
+		grid-area: test5;
+	}
+}
+
+@media screen and (min-width: 760px) and (min-width: 1020px) {
+	body {
+		padding: 40px;
+		grid-gap: 40px;
+		grid-template: "test1 test2 test2" 1fr "test4 test4 test3" 1fr "test5 test5 test5" 1fr / 1fr 1fr 1fr;
+	}
+	body P {
+		font-size: 2rem;
+	}
+	body h2 {
+		font-size: 3rem;
+	}
+	body h3 {
+		font-size: 1.3rem;
+	}
+	body article {
+		border-radius: 20px;
+	}
+}
+
+@media screen and (min-width: 760px) and (min-width: 1020px) and (min-width: 1640px) {
+	body {
+		padding: 120px;
+		grid-gap: 40px;
+		grid-template: "test1 test2 test2 test5" 1fr "test4 test4 test3 test5" 1fr / 1fr 1fr 1fr 1fr;
+	}
+	body article {
+		border-radius: 40px;
+	}
+}
+
+/*# sourceMappingURL=main.css.map */

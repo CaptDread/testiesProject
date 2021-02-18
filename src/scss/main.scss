@@ -1,0 +1,185 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+/* 1. Main Layout ================================= */
+
+
+body {
+	background: #F7ECF8;
+}
+
+/* 2. Content ================================= */
+
+
+body{
+	display: grid;
+	font-size: 1.3rem;
+
+	h2{
+		font-weight: 600;
+		font-size: 2rem;
+		margin: 20px 0px;
+	}
+
+	h3{
+		font-size: 1rem;
+		margin: 4.2px 0px;
+
+	}
+	p{
+		color: $para-text;
+	}
+	.userContainer{
+		margin: 20px auto;
+		.user{
+			display: flex;
+			align-items: center;
+			width: 50%;
+
+			.imgContainer{
+				border: 6.66px #d9d9d954 solid;
+				border-radius: 100%;
+				width: fit-content;
+				height: fit-content;
+				margin-right: 4.2%;
+				img{
+					width: 30px;
+					height: 30px;
+					border-radius: 100%;
+				}
+			}
+		}
+	}
+
+	article{
+		padding: 40px;
+	}
+
+	.odd {
+		display: flex;
+		flex-direction: column-reverse;
+		background-color: #fff;
+		.userContainer{
+			margin-left: auto;
+
+			.user{
+				width: 105%;
+			}
+		}
+	}
+	.even{
+		color: #F7ECF8;
+		
+	}
+
+	.test2{
+		background: #19202D;
+	}
+
+	.test4{
+		background: #CB1E7B;
+	}
+	.test5{
+
+		.userContainer{
+			margin-left: 0%;
+		}
+	}
+
+	@include bp-M{
+		padding: 20px;
+		grid-gap: 20px;
+		grid-template:
+		"test1 test2" 1fr
+		"test4 test2" 1fr
+		"test4 test3" 1fr
+		"test5 test5" 1fr
+		/
+		1fr 1fr;
+
+		article{
+			border-radius: 10px;
+		}
+
+		.test1{
+			grid-area: test1;
+		}
+		.test2{
+			grid-area: test2;
+		}
+		.test3{
+			grid-area: test3;
+		}
+		.test4{
+			grid-area: test4;
+		}
+		.test5{
+			grid-area: test5;
+		}
+
+		@include bp-L{
+			padding: 40px;
+			grid-gap: 40px;
+			grid-template: 
+			"test1 test2 test2" 1fr
+			"test4 test4 test3" 1fr
+			"test5 test5 test5" 1fr
+			/
+			1fr 1fr 1fr;
+
+			P{
+				font-size: 2rem;
+			}
+			h2{
+				font-size: 3rem;
+			}
+			h3{
+				font-size: 1.3rem;
+			}
+
+			article{
+				border-radius: 20px;
+			}
+
+			@include bp-XL{
+				padding: 120px;
+				grid-gap: 40px;
+				grid-template: 
+				"test1 test2 test2 test5" 1fr
+				"test4 test4 test3 test5" 1fr
+				/
+				1fr 1fr 1fr 1fr;
+
+				article{
+					border-radius: 40px;
+				}
+			}
+		}
+	}
+}
